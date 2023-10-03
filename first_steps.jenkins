@@ -1,25 +1,28 @@
 #! groovy
 // Check URL properties
-
 properties([disableConCurrentBuilds()])
 
 pipeline{
   agent {
-  label 'master'
-  }
+    label 'master'
+    }
   options {
-  buildDiscarder(logRotator(numToKeepStr:'10',artifactNumToKeepStr:'10'))
-  timetamps()
+    buildDiscarder(logRotator(numToKeepStr:'10',artifactNumToKeepStr:'10'))
+    timetamps()
   }
   stages {
     stage("First Step"){
       steps {
+        echo 'Start First Step'
         sh 'ping mail.ru/'
+        echo 'End First Step'
       }
     }
     stage ("Second Step"){
       steps {
+        echo 'Start Second Step'
         sh 'ping https://mtkp.bmstu.ru/'
+        echo 'End Second Step'
       }
     }
   }
