@@ -13,16 +13,16 @@ pipeline{
   stages {
     stage("First Step"){
       steps {
-        echo 'Start First Step'
-        sh 'ping mail.ru/'
-        echo 'End First Step'
+        echo "Start First Step"
+        sh "ping mail.ru/"
+        echo "End First Step"
       }
     }
     stage ("Second Step"){
       steps {
-        echo 'Start Second Step'
-        sh 'ping https://mtkp.bmstu.ru/'
-        echo 'End Second Step'
+        echo "Start Second Step"
+        sh "ping https://mtkp.bmstu.ru/"
+        echo "End Second Step"
       }
     }
   }
